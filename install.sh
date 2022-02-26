@@ -24,6 +24,11 @@ rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 echo "Step Complete!"
 
+echo "Installing starship..."
+mkdir -p ~/.config
+ln -s $HOME/.dotfiles/starship.toml $HOME/.config/starship.toml
+echo "Step Complete!"
+
 echo "Running Homebrew"
 # Update Homebrew recipes
 brew update
@@ -40,7 +45,7 @@ echo "Step Complete!"
 echo "Setting up default dev python..."
 LATEST_PYTHON="3.10.2"
 env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install $LATEST_PYTHON
-pyenv global $LATEST_PYTHON system
+pyenv global $LATEST_PYTHON
 python -m pip install --upgrade pip
 pip install virtualenv
 pip install poetry
