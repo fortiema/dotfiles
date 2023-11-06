@@ -12,12 +12,12 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-# exa
+# eza
 export TIME_STYLE="long-iso"
 LS_FLAGS="--all --group-directories-first --sort=name"
-alias ls="exa ${LS_FLAGS} --across"
-alias ll="exa ${LS_FLAGS} --long --header --binary --created --modified --git --classify"
-alias lld="exa -lbhHFGmuSa --group-directories-first"
+alias ls="eza ${LS_FLAGS} --across"
+alias ll="eza ${LS_FLAGS} --long --header --binary --created --modified --git --classify"
+alias lld="eza -lbhHFGmuSa --group-directories-first"
 alias l="ls"
 alias tree="ll --tree"
 
@@ -48,3 +48,4 @@ alias gpush="git push"
 # File Assoc
 alias -s {md,markdown,rst,toml,json}=code
 alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=iina
+
