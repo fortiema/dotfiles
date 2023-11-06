@@ -8,7 +8,7 @@ tap 'homebrew/bundle'
 brew 'adr-tools'
 brew 'awscli'
 brew 'coreutils' # Those that come with macOS are outdated
-brew 'exa'
+brew 'eza'
 brew 'fd'
 brew 'ffmpeg'
 brew 'gh'
