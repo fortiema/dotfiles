@@ -39,11 +39,11 @@ brew bundle --file $DOTFILES/Brewfile
 echo "Step Complete!"
 
 echo "Installing nvm..."
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 echo "Step Complete!"
 
 echo "Setting up default dev python..."
-LATEST_PYTHON="3.10.2"
+LATEST_PYTHON="3.10:13"
 env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install $LATEST_PYTHON
 pyenv global $LATEST_PYTHON
 python -m pip install --upgrade pip
