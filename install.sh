@@ -48,6 +48,8 @@ pyenv global $LATEST_PYTHON
 python -m pip install --upgrade pip
 pipx ensurepath
 pipx install poetry
+mkdir -p $DOTFILES/plugins/poetry
+poetry completions zsh > $DOTFILES/plugins/poetry/_poetry
 echo "Step Complete!"
 
 # Mackup not working in Sonoma, will break your setup
