@@ -99,14 +99,19 @@ export ZSH="$HOME/.oh-my-zsh"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES
+ZSH_CUSTOM="$ZSH/custom"
+
+# zsh-nvm settings
+export NVM_DIR="$HOME/.nvm"
+export NVM_LAZY_LOAD=true
+export NVM_NO_USE=true
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git poetry)
+plugins=(git poetry zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,11 +123,6 @@ export HOMEBREW_NO_ANALYTICS=1
 # GPG Forwarding
 GPG_TTY=\$(tty)
 export GPG_TTY
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # starship
 eval "$(starship init zsh)"

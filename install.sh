@@ -6,6 +6,8 @@ echo "Setting up your Mac. This will take a while..."
 if test ! $(which omz); then
   echo "Installing Oh-My-ZSH..."
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+  ZSH_CUSTOM_PLUGINS="$HOME/.oh-my-zsh/custom/plugins"
+  mkdir -p $ZSH_CUSTOM_PLUGINS
   echo "Step Complete!"
 fi
 
@@ -13,7 +15,6 @@ fi
 if test ! $(which brew); then
   echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
   echo "Step Complete!"
@@ -39,7 +40,8 @@ brew bundle --file $DOTFILES/Brewfile
 echo "Step Complete!"
 
 echo "Installing nvm..."
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+git clone https://github.com/lukechilds/zsh-nvm $ZSH_CUSTOM_PLUGINS/zsh-nvm
+nvm ls
 echo "Step Complete!"
 
 echo "Setting up default dev python..."
@@ -49,8 +51,8 @@ pyenv global $LATEST_PYTHON
 python -m pip install --upgrade pip
 pipx ensurepath
 pipx install poetry
-mkdir -p $DOTFILES/plugins/poetry
-poetry completions zsh > $DOTFILES/plugins/poetry/_poetry
+mkdir -p $ZSH_CUSTOM_PLUGINS/poetry
+poetry completions zsh > $ZSH_CUSTOM_PLUGINS/poetry/_poetry
 echo "Step Complete!"
 
 # Mackup not working in Sonoma, will break your setup
