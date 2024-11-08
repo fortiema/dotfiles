@@ -38,7 +38,7 @@ brew bundle --file $DOTFILES/Brewfile
 echo "Step Complete!"
 
 echo "Installing nvm..."
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 echo "Step Complete!"
 
 echo "Setting up default dev python..."
