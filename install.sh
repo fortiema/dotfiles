@@ -32,7 +32,6 @@ echo "Step Complete!"
 echo "Running Homebrew"
 # Update Homebrew recipes
 brew update
-
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
@@ -49,16 +48,17 @@ pyenv global $LATEST_PYTHON
 python -m pip install --upgrade pip
 pipx ensurepath
 pipx install poetry
-
 echo "Step Complete!"
 
-echo "Installing Mackup..."
-ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
-echo "Step Complete!"
+# Mackup not working in Sonoma, will break your setup
+# ref.: https://github.com/lra/mackup?tab=readme-ov-file#warning
+# echo "Installing Mackup..."
+# ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+# echo "Step Complete!"
 
-if [ ! -f "$DOTFILES/.macos" ]; then
-    echo "Seting macOS system preferences. Shell will reload at the end..."
-    source $DOTFILES/.macos
-fi
+# if [ ! -f "$DOTFILES/.macos" ]; then
+#     echo "Seting macOS system preferences. Shell will reload at the end..."
+#     source $DOTFILES/.macos
+# fi
 
 echo "All Done! Reboot for changes to take effect and enjoy your new system :)"
