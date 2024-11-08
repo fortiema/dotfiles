@@ -47,8 +47,9 @@ LATEST_PYTHON="3.12"
 env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install $LATEST_PYTHON
 pyenv global $LATEST_PYTHON
 python -m pip install --upgrade pip
-pip install virtualenv
-pip install poetry
+pipx ensurepath
+pipx install poetry
+
 echo "Step Complete!"
 
 echo "Installing Mackup..."
