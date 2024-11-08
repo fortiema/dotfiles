@@ -22,6 +22,7 @@ fi
 echo "Installing zshrc..."
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+source ~/.zshrc
 echo "Step Complete!"
 
 echo "Installing starship..."
