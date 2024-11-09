@@ -17,7 +17,7 @@ export TIME_STYLE="long-iso"
 LS_FLAGS="--all --group-directories-first --sort=name"
 alias ls="eza ${LS_FLAGS} --across"
 alias ll="eza ${LS_FLAGS} --long --header --binary --created --modified --git --classify"
-alias lld="eza -lbhHFGmuSa --group-directories-first"
+alias lld="eza -lbhHGmuSa --group-directories-first"
 alias l="ls"
 alias tree="ll --tree"
 
